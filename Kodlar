@@ -1,0 +1,21 @@
+#define led 3
+
+int isik;
+
+
+void setup() {
+
+  pinMode(led, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() 
+
+{
+ int guc = analogRead(A0);
+ Serial.println(guc);
+ delay(50);
+ int parlaklik = map(guc, 25,1250,0,255);
+ analogWrite(led, parlaklik /2);
+ 
+}
